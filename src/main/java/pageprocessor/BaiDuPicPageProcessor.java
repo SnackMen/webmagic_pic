@@ -37,7 +37,7 @@ public class BaiDuPicPageProcessor implements PageProcessor {
     private void processPicture(Page page){
         //获取所有满足匹配的url,已经证明获取的不是空
         List<String> url = page.getHtml().xpath("//*[@id=\"head\"]/div/div[@class=\"s_form\"]/div").all();
-        int i=0;
+        int i=1;
         System.out.println(url.size());
         for(String picUrl:url){
             //从每个url中获取图片路径
@@ -46,7 +46,7 @@ public class BaiDuPicPageProcessor implements PageProcessor {
             logger.info("图片url:"+picU);
             System.out.println(picU);
             //下载路径
-            String downloadDir = "F:/pic";
+            String downloadDir = "/home/laowang/pic";
             //文件保存路径
             String filePath = downloadDir + File.separator+"laowang";
             //文件保存类型
